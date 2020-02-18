@@ -1,0 +1,121 @@
+{
+	"name": "maestro",
+	"displayName": "maestro",
+	"description": "Maestro Language Integration",
+	"version": "0.0.1",
+	"publisher": "matheuslessa",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.42.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Debuggers"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/matheuslessarodrigues/maestro-vscode.git"
+	},
+	"bugs": {
+		"url": "https://github.com/matheuslessarodrigues/maestro-vscode/issues"
+	},
+	"scripts": {
+		"prepublishOnly": "tsc -p ./src",
+		"compile": "tsc -p ./src",
+		"tslint": "tslint ./src/**/*.ts",
+		"watch": "tsc -w -p ./src",
+		"package": "vsce package",
+		"publish": "vsce publish"
+	},
+	"dependencies": {
+		"vscode-debugadapter": "1.37.0"
+	},
+	"devDependencies": {
+		"@types/node": "10.12.12",
+		"typescript": "3.5.3",
+		"vscode": "1.1.36",
+		"tslint": "5.18.0",
+		"vsce": "1.66.0"
+	},
+	"main": "./out/extension",
+	"activationEvents": [
+		"//onDebug",
+		"onDebugResolve:maestro"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "maestro",
+				"aliases": [
+					"Maestro"
+				],
+				"extensions": [
+					".maestro",
+					".mst"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "maestro",
+				"scopeName": "source.maestro",
+				"path": "./syntaxes/maestro.tmLanguage.json"
+			}
+		],
+		"breakpoints": [
+			{
+				"language": "maestro"
+			}
+		],
+		"debuggers": [
+			{
+				"type": "maestro",
+				"label": "Maestro Debugger",
+				"program": "./src/MaestroAdapter.js",
+				"runtime": "node",
+				"configurationAttributes": {
+					"attach": {
+						"required": [
+							"port"
+						],
+						"properties": {
+							"address": {
+								"type": "string",
+								"description": "Maestro debugger attach address",
+								"default": "localhost"
+							},
+							"port": {
+								"type": "number",
+								"description": "Maestro debugger attach port",
+								"default": 47474
+							}
+						}
+					}
+				},
+				"initialConfigurations": [
+					{
+						"type": "maestro",
+						"name": "Maestro Debugger",
+						"request": "attach",
+						"address": "localhost",
+						"port": 47474
+					}
+				],
+				"configurationSnippets": [
+					{
+						"label": "Maestro Debug: Attach",
+						"description": "A new configuration for maestro debugging",
+						"body": {
+							"type": "maestro",
+							"name": "Maestro Debugger",
+							"request": "attach",
+							"address": "localhost",
+							"port": 47474
+						}
+					}
+				]
+			}
+		]
+	}
+}

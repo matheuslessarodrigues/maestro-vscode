@@ -1,0 +1,57 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Maestro",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.maestro",
+					"match": "\\b(if|else|foreach|in|return)\\b"
+				},
+				{
+					"name": "keyword.maestro",
+					"match": "\\b(import|external|command)\\b"
+				},
+				{
+					"name": "variable.maestro",
+					"match": "\\b\\$(\\$|\\w)\\b"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.language.maestro",
+					"match": "\\b(true|false)\\b"
+				},
+				{
+					"name": "constant.numeric.maestro",
+					"match": "\\b(-|+)?\\d+(\\.\\d+)?\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.maestro",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.maestro",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.maestro"
+}
