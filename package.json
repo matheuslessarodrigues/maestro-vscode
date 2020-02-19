@@ -39,8 +39,8 @@
 	},
 	"main": "./out/extension",
 	"activationEvents": [
-		"//onDebug",
-		"onDebugResolve:maestro"
+		"onLanguage:maestro",
+		"onDebug"
 	],
 	"contributes": {
 		"languages": [
