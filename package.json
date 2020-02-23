@@ -6,7 +6,7 @@
 	"publisher": "matheuslessa",
 	"license": "MIT",
 	"engines": {
-		"vscode": "^1.42.0"
+		"vscode": "^1.32.0"
 	},
 	"categories": [
 		"Programming Languages",
@@ -19,25 +19,9 @@
 	"bugs": {
 		"url": "https://github.com/matheuslessarodrigues/maestro-vscode/issues"
 	},
-	"scripts": {
-		"prepublishOnly": "tsc -p ./src",
-		"compile": "tsc -p ./src",
-		"tslint": "tslint ./src/**/*.ts",
-		"watch": "tsc -w -p ./src",
-		"package": "vsce package",
-		"publish": "vsce publish"
-	},
-	"dependencies": {
-		"vscode-debugadapter": "1.37.0"
-	},
-	"devDependencies": {
-		"@types/node": "10.12.12",
-		"typescript": "3.5.3",
-		"vscode": "1.1.36",
-		"tslint": "5.18.0",
-		"vsce": "1.66.0"
-	},
-	"main": "./out/extension",
+	"scripts": {},
+	"dependencies": {},
+	"main": "./src/extension.js",
 	"activationEvents": [
 		"onLanguage:maestro",
 		"onDebug"
