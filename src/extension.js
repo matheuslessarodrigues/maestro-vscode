@@ -27,8 +27,8 @@ class MaestroConfigurationProvider {
 }
 
 class MaestroDebugAdapterDescriptorFactory {
-	createDebugAdapterDescriptor(_session, _executable) {
-		return new vscode.DebugAdapterServer(47474);
+	createDebugAdapterDescriptor(session, _executable) {
+		return new vscode.DebugAdapterServer(session.configuration.port, session.configuration.address);
 	}
 }
 
