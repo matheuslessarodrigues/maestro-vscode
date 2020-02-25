@@ -51,11 +51,11 @@
 			"patterns": [
 				{
 					"name": "entity.name.function",
-					"match": "\\b([A-Za-z]|\\_|\\+|-|\\*)(\\w|\\+|-|\\*)*\\b"
+					"match": "\\b[A-Za-z_\\+\\-\\*\/<>=][\\w\\+\\-\\*\/<>=]*\\b"
 				},
 				{
 					"name": "entity.name.variable.local",
-					"match": "\\$([A-Za-z]|\\_|-)(\\w|-)*\\b"
+					"match": "\\$[A-Za-z_\\-][\\w\\-]*\\b"
 				}
 			]
 		},
