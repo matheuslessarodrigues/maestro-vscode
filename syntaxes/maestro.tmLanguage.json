@@ -35,7 +35,7 @@
 				},
 				{
 					"name": "keyword.maestro",
-					"match": "\\b(import|external|command)\\b"
+					"match": "\\b(command)\\b"
 				},
 				{
 					"name": "keyword.operator.maestro",
