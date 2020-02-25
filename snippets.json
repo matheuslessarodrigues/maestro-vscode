@@ -1,0 +1,38 @@
+{
+	"Command": {
+		"prefix": "command",
+		"body": [
+			"command ${1:name} {",
+			"\t$0",
+			"}"
+		],
+		"description": "Define a new command"
+	},
+	"Export command": {
+		"prefix": "export",
+		"body": [
+			"export command ${1:name} {",
+			"\t$0",
+			"}"
+		],
+		"description": "Define a new exported command available to be used in other sources"
+	},
+	"If": {
+		"prefix": "if",
+		"body": [
+			"if ${1:expression} {",
+			"\t$0",
+			"}"
+		],
+		"description": "If control flow"
+	},
+	"Foreach": {
+		"prefix": "foreach",
+		"body": [
+			"foreach \\$${1:it} in ${2:expression} {",
+			"\t$0",
+			"}"
+		],
+		"description": "Foreach control flow"
+	}
+}

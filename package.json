@@ -10,7 +10,8 @@
 	},
 	"categories": [
 		"Programming Languages",
-		"Debuggers"
+		"Debuggers",
+		"Snippets"
 	],
 	"repository": {
 		"type": "git",
@@ -45,6 +46,12 @@
 				"language": "maestro",
 				"scopeName": "source.maestro",
 				"path": "./syntaxes/maestro.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "maestro",
+				"path": "./snippets.json"
 			}
 		],
 		"breakpoints": [
